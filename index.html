@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Feliz cumple, Caro</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#120e0b; --ink:#f4eee7; --mute:#b9ab9c; --gold:#deb86e; }
+  * { box-sizing:border-box; }
+  body { margin:0; background:var(--bg); color:var(--ink); font-family:'Playfair Display', Georgia, serif;
+         min-height:100vh; display:flex; flex-direction:column; align-items:center; padding:48px 16px 64px; }
+  .hi { font-size:22px; letter-spacing:.04em; color:var(--mute); margin:0; }
+  h1 { font-family:'Dancing Script', cursive; font-size:88px; line-height:1; margin:6px 0 10px; color:var(--gold); font-weight:700; }
+  .intro { max-width:420px; text-align:center; color:var(--mute); font-size:17px; line-height:1.5; margin:0 0 40px; }
+  .card { width:100%; max-width:420px; margin-bottom:44px; }
+  .label { display:flex; align-items:baseline; gap:12px; margin:0 0 12px; }
+  .num { font-family:'Dancing Script', cursive; color:var(--gold); font-size:40px; line-height:1; }
+  .t { font-size:22px; margin:0; }
+  .s { font-size:14px; color:var(--mute); margin:2px 0 0; font-style:italic; }
+  video { width:100%; aspect-ratio:9/16; background:#000; border-radius:16px; display:block;
+          box-shadow:0 20px 50px rgba(0,0,0,.55); }
+  footer { text-align:center; margin-top:8px; }
+  footer .love { font-family:'Dancing Script', cursive; font-size:56px; color:var(--gold); margin:0; }
+  footer .more { font-size:20px; margin:4px 0 0; }
+</style>
+</head>
+<body>
+  <p class="hi">Feliz cumple</p>
+  <h1>Caro</h1>
+  <p class="intro">Diez años de fotos, dos canciones y un montón de momentos. Subí el volumen.</p>
+
+  <section class="card">
+    <div class="label"><span class="num">1</span><div><p class="t">Para emocionarte</p><p class="s">Just the Way You Are · Bruno Mars</p></div></div>
+    <video src="video1.mp4" poster="poster1.jpg" controls playsinline preload="metadata"></video>
+  </section>
+
+  <section class="card">
+    <div class="label"><span class="num">2</span><div><p class="t">Para bailar</p><p class="s">Rock with You · Michael Jackson</p></div></div>
+    <video src="video2.mp4" poster="poster2.jpg" controls playsinline preload="metadata"></video>
+  </section>
+
+  <footer>
+    <p class="love">Te amamos</p>
+    <p class="more">mucho, mucho</p>
+  </footer>
+<script>
+  // al reproducir uno, pausa el otro
+  const vs = document.querySelectorAll('video');
+  vs.forEach(v => v.addEventListener('play', () => vs.forEach(o => { if (o !== v) o.pause(); })));
+</script>
+</body>
+</html>
